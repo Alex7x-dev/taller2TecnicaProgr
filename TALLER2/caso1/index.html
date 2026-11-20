@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Factura</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="7">Simulador de Factura de Ventas</th>
+            </tr>
+
+            <tr>
+                <td>Cliente:</td>
+                <td>
+                    <input type="text" name="cliente" id="txt-id-cliente">
+                </td>
+
+                <td>Fecha:</td>
+                <td>
+                    <input type="date" name="fecha" id="txt-id-fecha">
+                </td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Producto:</td>
+                <td>
+                    <select name="productos" id="ld-id-productos">
+                        <option value="">--seleccione un producto--</option>
+                        <option value="Arroz">Arroz</option>
+                        <option value="Azucar">Azucar</option>
+                        <option value="Leche">Leche</option>
+                        <option value="Pan">Pan</option>
+                        <option value="Aceite">Aceite</option>
+                        <option value="Huevos">Huevos</option>
+                        <option value="Fideos">Fideos</option>
+                        <option value="Cafe">Cafe</option>
+                        <option value="Queso">Queso</option>
+                        <option value="Atun">Atun</option>
+                    </select>
+                </td>
+
+                <td>PVP:</td>
+                <td>
+                    <input type="number" name="precio" id="txt-id-precio" readonly>
+                </td>
+
+                <td>Cantidad:</td>
+                <td>
+                    <input type="number" name="cantidad" id="txt-id-cantidad" min="1">
+                </td>
+
+                <td>
+                    <button type="button" id="btn-agregar">Agregar</button>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td colspan="7">
+                    <table border="1" style="width: 100%;" id="tb-id-detalle-factura">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="detalle-productos">
+                            <tr>
+                                <td colspan="6" align="center">
+                                    No hay productos agregados
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="7" align="right">
+                    <table border="1">
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td>
+                                <input type="text" id="txt-id-subtotal" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Descuento:</td>
+                            <td>
+                                <input type="text" id="txt-id-descuento" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>IVA (15%):</td>
+                            <td>
+                                <input type="text" id="txt-id-iva" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Total a pagar:</td>
+                            <td>
+                                <input type="text" id="txt-id-total-pagar" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">Estadisticas de la Factura</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Total de productos registrados:</td>
+                <td><input type="text" id="total-productos" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Total de unidades compradas:</td>
+                <td><input type="text" id="total-unidades" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Promedio por producto:</td>
+                <td><input type="text" id="promedio-producto" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Producto de mayor valor:</td>
+                <td><input type="text" id="maximo-producto" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button type="button" id="btn-nueva-factura">Nueva factura</button>
+
+    <p id="mensaje-factura"></p>
+
+</body>
+</html>

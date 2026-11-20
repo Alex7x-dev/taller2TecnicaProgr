@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Bancario Inteligente</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+
+            <tr>
+                <th colspan="4">Cajero Bancario Inteligente</th>
+            </tr>
+
+            <tr>
+                <td>Tipo de operacion:</td>
+
+                <td>
+                    <select name="operacion" id="ld-id-operacion">
+                        <option value="">--seleccione una operacion--</option>
+                        <option value="deposito">Deposito</option>
+                        <option value="retiro">Retiro</option>
+                    </select>
+                </td>
+
+                <td>Monto:</td>
+
+                <td>
+                    <input type="number" name="monto" id="txt-id-monto" min="0.01" step="0.01">
+                </td>
+
+                <td>
+                    <button type="button" id="btn-realizar">
+                        Realizar operacion
+                    </button>
+                </td>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td colspan="5">
+
+                    <table border="1" style="width: 100%;" id="tb-id-movimientos">
+
+                        <thead>
+                            <tr>
+                                <th colspan="4">Historial de movimientos bancarios</th>
+                            </tr>
+
+                            <tr>
+                                <th>Item</th>
+                                <th>Operacion</th>
+                                <th>Monto</th>
+                                <th>Saldo disponible</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="detalle-movimientos">
+
+                            <tr>
+                                <td colspan="4" align="center">
+                                    No existen movimientos registrados
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+                <td colspan="5" align="right">
+
+                    <table border="1">
+
+                        <tr>
+                            <td>Total depositado:</td>
+                            <td>
+                                <input type="text" id="txt-id-depositado" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Total retirado:</td>
+                            <td>
+                                <input type="text" id="txt-id-retirado" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Saldo final:</td>
+                            <td>
+                                <input type="text" id="txt-id-saldo" readonly placeholder="0.00">
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </td>
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+    <br>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th colspan="2">Estadisticas Bancarias</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Numero de movimientos:</td>
+                <td>
+                    <input type="text" id="txt-id-numero-movimientos" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Promedio por movimiento:</td>
+                <td>
+                    <input type="text" id="txt-id-promedio" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cantidad de depositos:</td>
+                <td>
+                    <input type="text" id="txt-id-cantidad-depositos" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cantidad de retiros:</td>
+                <td>
+                    <input type="text" id="txt-id-cantidad-retiros" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Movimiento de mayor valor:</td>
+                <td>
+                    <input type="text" id="txt-id-mayor-movimiento" readonly>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button type="button" id="btn-reiniciar">
+        Reiniciar cuenta bancaria
+    </button>
+
+    <p id="mensaje-banco"></p>
+
+</body>
+</html>
